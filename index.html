@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ZEGAREK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/37ed8ac084.js" crossorigin="anonymous"></script>
+</head>
+<style>
+*{
+  
+  justify-content: center;
+  font-size: 15px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, #256EB0,#ECA5B3);
+}
+.tynoniewiem {
+
+ position: absolute;
+ bottom: 0;
+}
+.ikona a {
+  position: absolute;
+  bottom: 0;
+  margin-left: 390px;
+  color:black;
+  
+  
+  
+}
+
+#zegar{
+  width: 400px;
+  height: 400px;
+  background-image: linear-gradient(to bottom right, #256EB0,#ECA5B3);
+  border: 10px solid white;
+  border-radius: 50%;
+  box-shadow: 10px 10px 50px 10px black;
+       
+  position: relative;
+}
+
+#sekunda {
+  width: 3px;
+  height: 48%;
+  
+  transform-origin: 50% 80%;
+  background-color: rgb(27, 3, 3);
+  position: absolute;
+  top: 10%;
+  left: 50%;
+}
+#godzina {
+  width: 7px;
+  height: 25%;
+  background-color: #ca4b76;
+  left: calc(50% + -2px); 
+  transform-origin: 50% 80%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+
+}
+
+
+#minuta {
+  width: 5px;
+  height: 35%;
+  background-color: #7AB1FF;
+  top: 18%;
+  transform-origin: 50% 80%;
+  position: absolute;
+  left: 50%;
+  left: calc(50% - 1px);
+}
+
+
+.numer{
+  height: 105%;
+  position: absolute;
+  left: calc(50% - 0.6em);
+}
+
+.numer div {
+  font-family: 'Bangers', cursive;
+  width: 1em;
+  line-height: 3em;
+  color:black;
+  text-shadow: 2px 1px rgb(80, 80, 80);
+  text-align: center;
+  font-size: 20px;
+}
+
+.numer1 {
+  
+  transform: rotate(30deg);
+}
+
+
+
+.numer2 {
+  transform: rotate(60deg);
+}
+
+.numer2 div{
+
+  transform: rotate(-45deg);
+}
+
+.numer3 {
+
+  transform: rotate(90deg);
+}
+
+.numer3 div{
+
+  transform: rotate(-90deg);
+}
+
+.numer4 {
+
+  transform: rotate(120deg);
+}
+
+.numer4 div{
+
+  transform: rotate(-120deg);
+}
+
+.numer5 {
+
+  transform: rotate(150deg);
+}
+
+.numer5 div{
+
+  transform: rotate(-150deg);
+}
+
+.numer6 {
+
+  transform: rotate(180deg);
+}
+
+.numer6 div{
+  transform: rotate(-180deg);
+}
+
+.numer7 {
+
+  transform: rotate(210deg);
+}
+
+.numer7 div{
+
+  transform: rotate(-210deg);
+}
+
+.numer8 {
+
+  transform: rotate(240deg);
+}
+
+.numer8 div{
+  transform: rotate(-240deg);
+}
+
+.numer9 {
+  transform: rotate(270deg);
+}
+
+.numer9 div{
+
+  transform: rotate(-270deg);
+}
+
+.numer10 {
+
+  transform: rotate(300deg);
+}
+
+.numer10 div{
+  transform: rotate(-320deg);
+}
+
+.numer11 {
+   transform: rotate(330deg);
+
+}
+
+
+.numer12 {
+
+    transform: rotate(0deg);
+}
+
+.numer12 div{
+  transform: rotate(-0deg);
+}
+
+</style>
+
+<script>
+
+setInterval(function(){
+
+    var data = new Date();
+    czas(data);
+    zegar(data);
+
+  }, 1000);
+  
+  function zegar(data) {
+
+    var secundo = document.getElementById("sekunda").style;
+
+    var minuto = document.getElementById("minuta").style;
+
+    var godzino = document.getElementById("godzina").style;
+    
+    secundo.transform = "rotate(" + data.getSeconds() * 6 + "deg)";
+
+    minuto.transform = "rotate(" + data.getMinutes() * 6 + "deg)";
+
+    godzino.transform = "rotate(" + (data.getHours() * 30 + data.getMinutes() * 0.5) + "deg)";
+
+  }
+  
+
+  function czas(data) {
+    var czas = document.getElementById("time");
+    
+  }
+
+setupClock();
+
+</script>
+
+
+
+
+
+<body>
+  <div id="time"></div><br>
+<div id="zegar">
+  <div class="numer numer1">
+    <div>1</div>
+</div>
+
+  <div class="numer numer2">
+    <div>2</div>
+  </div>
+  <div class="numer numer3">
+    <div>3</div>
+  </div>
+  <div class="numer numer4">
+    <div>4</div>
+  </div>
+  <div class="numer numer5">
+    <div>5</div>
+  </div>
+  <div class="numer numer6">
+    <div>6</div>
+  </div>
+  <div class="numer numer7">
+    <div>7</div>
+  </div>
+  <div class="numer numer8">
+    <div>8</div>
+  </div>
+  <div class="numer numer9">
+    <div>9</div>
+  </div>
+  <div class="numer numer10">
+    <div>10</div>
+  </div>
+  <div class="numer numer11">
+    <div>11</div>
+  </div>
+  <div class="numer numer12">
+    <div>12</div>
+  </div>
+  <div id="godzina"></div>
+
+  <div id="minuta"></div>
+
+  <div id="sekunda"></div>
+</div>
+<div class = "tynoniewiem">©2020 by JŚ</div>
+<div class= "ikona" ><a href="darkmode.html"><i class="fas fa-moon fa-2x"></i></a></div>
+</body>
+
+</html>
